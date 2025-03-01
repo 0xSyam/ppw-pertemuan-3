@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: grid;
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "footer";
+        grid-template-rows: auto auto 1fr auto;
+        min-height: 100vh;
+        gap: 10px;
+      }
+
+      header,
+      footer {
+        background: orange;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        background: lightgreen;
+        padding: 15px;
+        text-align: center;
+      }
+
+      main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+        padding: 20px;
+        background: lightblue;
+      }
+
+      section {
+        background: lightyellow;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .articles {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+
+      article {
+        background: salmon;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+      }
+
+      aside {
+        background: lightsteelblue;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+
+    <nav>
+      <p>Navigation</p>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Section</h2>
+        <div class="articles">
+          <article>
+            <h3>Article 1</h3>
+          </article>
+          <article>
+            <h3>Article 2</h3>
+          </article>
+        </div>
+      </section>
+
+      <aside>
+        <h2>Aside</h2>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
